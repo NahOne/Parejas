@@ -24,3 +24,7 @@ ExportedObj/
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+ProjectSettings/
+Assets/02.3rdParty/Eldorado/Editor/ImageEffects/AntialiasingEditor.cs
+Assets/02.3rdParty/
+Assets/03.Resources/
