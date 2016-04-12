@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class LogicMenu : MonoBehaviour {
+    public GameObject gamePanel;
+    public GameObject scorePanel;
+    public AudioClip soundNext;
+    public AudioClip soundBack;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -13,18 +18,22 @@ public class LogicMenu : MonoBehaviour {
 	
 	}
 
-    private void StartGame()
+    public void StartGame()
     {
+        GetComponent<AudioSource>().PlayOneShot(soundNext);
         Application.LoadLevel(1);
     }
 
-    private void ShowRanking()
+    public void ShowRanking(bool show)
     {
-
+        GetComponent<AudioSource>().PlayOneShot(show?soundNext:soundBack);
+        gamePanel.SetActive(!show);
+        scorePanel.SetActive(show);
     }
 
-    private void Exit()
+    public void Exit()
     {
+        GetComponent<AudioSource>().PlayOneShot(soundBack);
         Application.Quit();
     }
 }
