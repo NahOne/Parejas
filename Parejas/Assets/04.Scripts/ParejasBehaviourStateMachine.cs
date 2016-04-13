@@ -15,6 +15,7 @@ public class ParejasBehaviourStateMachine : FSMStateMachine {
     {
         // default is an ORtype state
         // the first child added will be the inital state
+        children.Add(typeof(State_WaitToPlay));
         children.Add(typeof(State_AssignAndShow));
         children.Add(typeof(State_CheckTokens));
         children.Add(typeof(State_ClueLife));
@@ -23,6 +24,5 @@ public class ParejasBehaviourStateMachine : FSMStateMachine {
         children.Add(typeof(State_GameFinished));
         children.Add(typeof(State_WaitToken1));
         children.Add(typeof(State_WaitToken2));
-        children.Add(typeof(State_WaitToPlay));
     }
 }
