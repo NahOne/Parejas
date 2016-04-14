@@ -7,27 +7,15 @@ public class State_AssignAndShow : BaseFSMState {
 	ParejasBehaviourStateMachine SM;
 	float timer;
 	GameObject[] quads;
-	List<int> materialIndex = new List<int>();
+	List<int> materialIndex = new List<int>(new int[] {0,1,2,3,4,5,6,7,8,9,10,11,0,1,2,3,4,5,6,7,8,9,10,11});
 
 	public override void Enter ()
 	{
 		int indexMaterial;
-		int sizeList = 12;
-		materialIndex.Add (0);
-		materialIndex.Add (1);
-		materialIndex.Add (2);
-		materialIndex.Add (3);
-		materialIndex.Add (4);
-		materialIndex.Add (5);
-		materialIndex.Add (0);
-		materialIndex.Add (1);
-		materialIndex.Add (2);
-		materialIndex.Add (3);
-		materialIndex.Add (4);
-		materialIndex.Add (5);
+		int sizeList = 24;
 
 		SM = (ParejasBehaviourStateMachine)GetStateMachine();
-		SM.m_ssb.texto.text = "Press S to select First Token";
+		SM.m_ssb.texto.text = "Memoriza!!";
 		timer = 0;
 		//materialIndex = new int[] {0,1,2,3,4,5,0,1,2,3,4,5};
 		quads = GameObject.FindGameObjectsWithTag ("Quad");
