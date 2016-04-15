@@ -26,11 +26,18 @@ public class State_AssignAndShow : BaseFSMState {
 			materialIndex.RemoveAt(indexMaterial);
 			sizeList--;
 		}
+		for (int j = 0; j<SM.m_ssb.piezas.Length; ++j)
+		{
+			SM.m_ssb.piezas[j].GetComponent<Animator>().SetInteger("girar", 1);
+		}
 	}
 	
 	public override void Exit ()
 	{
-		
+		for (int k = 0; k<SM.m_ssb.piezas.Length; ++k)
+		{
+			SM.m_ssb.piezas[k].GetComponent<Animator>().SetInteger("girar", -1);
+		}
 	}
 	
 	public override void Update ()

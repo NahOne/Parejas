@@ -18,6 +18,9 @@ public class State_WaitToken1 : BaseFSMState {
 	
 	public override void Update ()
 	{
-		if (Input.GetKeyDown(KeyCode.S)
+		if (Input.GetKeyDown(KeyCode.S))
+		{
+
+		}
 	}
 }
