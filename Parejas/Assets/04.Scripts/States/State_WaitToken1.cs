@@ -24,9 +24,14 @@ public class State_WaitToken1 : BaseFSMState {
             RaycastHit hit;
 
             if (Physics.Raycast(SM.m_ssb.player.gameObject.transform.position, SM.m_ssb.player.gameObject.transform.forward, out hit))
-                //hit.transform.gameObject.GetComponent<Animator>().SetInteger("girar", 1);
+            {
                 Debug.Log(hit.transform.gameObject.name);
-            
+                if (hit.transform.gameObject.name.Equals("Cube"))
+                {
+                    hit.transform.gameObject.GetComponentInParent<Animator>().SetInteger("girar", 1);
+                    DoTransition(typeof(State_WaitToken2));
+                }
+            }
         }
 	}
 }
