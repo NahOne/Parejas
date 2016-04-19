@@ -8,7 +8,7 @@ public class ParejasBehaviour : MonoBehaviour {
 	public Text texto;
 	public GameObject[] piezas; 
 	public Material[] materials;
-
+    public GameObject player;
 
     // Use this for initialization
     void Start () {

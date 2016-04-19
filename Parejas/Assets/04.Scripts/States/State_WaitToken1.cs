@@ -18,9 +18,15 @@ public class State_WaitToken1 : BaseFSMState {
 	
 	public override void Update ()
 	{
-		if (Input.GetKeyDown(KeyCode.S))
+        Debug.DrawRay(SM.m_ssb.player.gameObject.transform.position, SM.m_ssb.player.gameObject.transform.forward);
+        if (Input.GetKeyDown(KeyCode.S))
 		{
+            RaycastHit hit;
 
-		}
+            if (Physics.Raycast(SM.m_ssb.player.gameObject.transform.forward, -Vector3.up, out hit))
+                //hit.transform.gameObject.GetComponent<Animator>().SetInteger("girar", 1);
+                Debug.Log(hit.transform.gameObject.name);
+            
+        }
 	}
 }
