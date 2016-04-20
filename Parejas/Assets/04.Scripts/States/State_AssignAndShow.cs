@@ -16,6 +16,7 @@ public class State_AssignAndShow : BaseFSMState {
 
 		SM = (ParejasBehaviourStateMachine)GetStateMachine();
 		SM.m_ssb.texto.text = "Memoriza!!";
+		SM.m_ssb.m_Time = 0;
 		timer = 0;
 		//materialIndex = new int[] {0,1,2,3,4,5,0,1,2,3,4,5};
 		quads = GameObject.FindGameObjectsWithTag ("Quad");
@@ -43,10 +44,6 @@ public class State_AssignAndShow : BaseFSMState {
 	public override void Update ()
 	{
 		timer += Time.deltaTime;
-		if(timer>=5)
-		{
-			// volver a rotar
-		}
 
 		if(timer >= 7)
 		{

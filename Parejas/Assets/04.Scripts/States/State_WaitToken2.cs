@@ -25,9 +25,9 @@ public class State_WaitToken2 : BaseFSMState {
 
             if (Physics.Raycast(SM.m_ssb.player.gameObject.transform.position, SM.m_ssb.player.gameObject.transform.forward, out hit))
             {
-                Debug.Log(hit.transform.gameObject.name);
                 if (hit.transform.gameObject.name.Equals("Cube"))
                 {
+					SM.m_Pieza2 = hit.collider.gameObject;
                     hit.transform.gameObject.GetComponentInParent<Animator>().SetInteger("girar", 1);
                     DoTransition(typeof(State_CheckTokens));
                 }

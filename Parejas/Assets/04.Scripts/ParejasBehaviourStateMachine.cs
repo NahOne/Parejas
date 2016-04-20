@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class ParejasBehaviourStateMachine : FSMStateMachine {
     public GameObject m_GameObject = null;
 	public ParejasBehaviour m_ssb = null;
+	public GameObject m_Pieza1;
+	public GameObject m_Pieza2;
+	public int m_Correctas;
 
     public ParejasBehaviourStateMachine(GameObject characterObj)
     {

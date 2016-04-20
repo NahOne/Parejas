@@ -11,6 +11,8 @@ public class State_WaitToPlay : BaseFSMState {
 		SM = (ParejasBehaviourStateMachine)GetStateMachine();
 		timer = 3;
 		SM.m_ssb.texto.text = "Game in " + System.Math.Round(timer,2) + " seconds...";
+		SM.m_ssb.m_Correctas = 0;
+		SM.m_ssb.m_CorrectasText.text = SM.m_ssb.m_Correctas + " / 12";
 	}
 	
 	public override void Exit ()
