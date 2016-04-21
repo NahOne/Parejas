@@ -47,6 +47,7 @@ public class State_AssignAndShow : BaseFSMState {
 
 		if(timer >= 7)
 		{
+            SM.m_ssb.m_StartTimer = true;
 			DoTransition(typeof(State_WaitToken1));
 		}
 	}

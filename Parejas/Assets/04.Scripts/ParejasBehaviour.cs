@@ -15,6 +15,8 @@ public class ParejasBehaviour : MonoBehaviour {
 
 	[HideInInspector]
 	public float m_Time;
+    [HideInInspector]
+    public bool m_StartTimer;
 
     // Use this for initialization
     void Start () {
@@ -22,18 +24,23 @@ public class ParejasBehaviour : MonoBehaviour {
 		m_ParejasSM = new ParejasBehaviourStateMachine(this.gameObject);
         m_ParejasSM.StartSM();
 		m_Time = 0;
+        m_StartTimer = false;
+        m_TimerText.text = "00:00";
     }
 	
 	// Update is called once per frame
 	void Update () {
-		m_Time += Time.deltaTime;
+        if (m_StartTimer)
+        {
+            m_Time += Time.deltaTime;
 
-		float minutes = Mathf.Floor(m_Time / 60); 
-		float seconds = Mathf.RoundToInt(m_Time%60);
+            float minutes = Mathf.Floor(m_Time / 60); 
+		    float seconds = Mathf.RoundToInt(m_Time%60);
 
-		m_TimerText.text =  minutes + ":" + seconds; 
-
-
+		    m_TimerText.text =  (minutes < 10.0f ? ("0" + minutes.ToString()) : minutes.ToString()) 
+                + ":" + (seconds < 10.0f ? ("0" + seconds.ToString()) : seconds.ToString());
+        }
+        
         // update the state machine very frame
         if (m_ParejasSM != null)
         {

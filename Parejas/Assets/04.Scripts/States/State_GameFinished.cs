@@ -9,6 +9,8 @@ public class State_GameFinished : BaseFSMState {
 	public override void Enter ()
 	{
 		SM = (ParejasBehaviourStateMachine)GetStateMachine();
+        PlayerPrefs.SetFloat("CurrentScore", SM.m_ssb.m_Time);
+        PlayerPrefs.Save();
 		SceneManager.LoadScene (0);
 	}
 	

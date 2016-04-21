@@ -17,7 +17,7 @@ public class LogicMenu : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        scoreValues = new int[5];
+        scoreValues = new int[6];
     }
 	
 	// Update is called once per frame
@@ -37,7 +37,8 @@ public class LogicMenu : MonoBehaviour {
 
         for (int i = 0; i < 5; ++i)
             scoreValues[i] = PlayerPrefs.GetInt("bestScore" + (i+1), 0);
-        
+        scoreValues[5] = (int)PlayerPrefs.GetFloat("CurrentScore");
+
         InsertSort();
 
         for (int i = 0; i < 5; ++i)
@@ -100,7 +101,7 @@ public class LogicMenu : MonoBehaviour {
     {
         int i, j;
         int tmp;
-        for (i = 1; i < 5; ++i)
+        for (i = 1; i < scoreValues.Length; ++i)
         {
             j = i;
             while (j > 0 && scoreValues[j - 1] < scoreValues[j])
