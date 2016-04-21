@@ -36,8 +36,8 @@ public class LogicMenu : MonoBehaviour {
         GetComponent<AudioSource>().PlayOneShot(show?soundNext:soundBack);
 
         for (int i = 0; i < 5; ++i)
-            scoreValues[i] = PlayerPrefs.GetInt("bestScore" + (i+1), 0);
-        scoreValues[5] = (int)PlayerPrefs.GetFloat("CurrentScore");
+            scoreValues[i] = PlayerPrefs.GetInt("bestScore" + (i+1), 99999);
+        scoreValues[5] = (int)PlayerPrefs.GetFloat("CurrentScore", 99999);
 
         InsertSort();
 
@@ -47,7 +47,7 @@ public class LogicMenu : MonoBehaviour {
             Debug.Log("Score2 " + i + ": " + scoreValues[i]);
         }
 
-        if (PlayerPrefs.GetInt("bestScore1", 0) != 0)
+        if (PlayerPrefs.GetInt("bestScore1", 0) < 99999)
         {
             score1.gameObject.SetActive(true);
             score1.text = "1- " + GetFormatTime(PlayerPrefs.GetInt("bestScore1", 0));
@@ -55,7 +55,7 @@ public class LogicMenu : MonoBehaviour {
         else
             score1.gameObject.SetActive(false);
 
-        if (PlayerPrefs.GetInt("bestScore2", 0) != 0)
+        if (PlayerPrefs.GetInt("bestScore2", 0) < 99999)
         {
             score2.gameObject.SetActive(true);
             score2.text = "2- " + GetFormatTime(PlayerPrefs.GetInt("bestScore2", 0));
@@ -63,7 +63,7 @@ public class LogicMenu : MonoBehaviour {
         else
             score2.gameObject.SetActive(false);
 
-        if (PlayerPrefs.GetInt("bestScore3", 0) != 0)
+        if (PlayerPrefs.GetInt("bestScore3", 0) < 99999)
         {
             score3.gameObject.SetActive(true);
             score3.text = "3- " + GetFormatTime(PlayerPrefs.GetInt("bestScore3", 0));
@@ -71,7 +71,7 @@ public class LogicMenu : MonoBehaviour {
         else
             score3.gameObject.SetActive(false);
 
-        if (PlayerPrefs.GetInt("bestScore4", 0) != 0)
+        if (PlayerPrefs.GetInt("bestScore4", 0) < 99999)
         {
             score4.gameObject.SetActive(true);
             score4.text = "4- " + GetFormatTime(PlayerPrefs.GetInt("bestScore4", 0));
@@ -79,7 +79,7 @@ public class LogicMenu : MonoBehaviour {
         else
             score4.gameObject.SetActive(false);
 
-        if (PlayerPrefs.GetInt("bestScore5", 0) != 0)
+        if (PlayerPrefs.GetInt("bestScore5", 0) < 99999)
         {
             score5.gameObject.SetActive(true);
             score5.text = "5- " + GetFormatTime(PlayerPrefs.GetInt("bestScore5", 0));

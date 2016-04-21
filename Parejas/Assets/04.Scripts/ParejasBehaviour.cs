@@ -75,4 +75,9 @@ public class ParejasBehaviour : MonoBehaviour {
 	public void GoToMainMenu(){
 		SceneManager.LoadScene (0);
 	}
+
+    public void Exit()
+    {
+        Application.LoadLevel(0);
+    }
 }
