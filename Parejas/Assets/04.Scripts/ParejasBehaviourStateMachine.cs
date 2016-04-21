@@ -10,10 +10,13 @@ public class ParejasBehaviourStateMachine : FSMStateMachine {
 	public GameObject m_Pieza2;
 	public int m_Correctas;
 
+	public GameObject m_EverLoopController;
+
     public ParejasBehaviourStateMachine(GameObject characterObj)
     {
         m_GameObject = characterObj;
 		m_ssb = m_GameObject.GetComponent<ParejasBehaviour>();
+		m_EverLoopController = GameObject.Find ("EverloopController");
     }
 
     // here we define the structure of the state machine's first layer

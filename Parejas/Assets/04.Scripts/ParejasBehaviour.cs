@@ -18,6 +18,8 @@ public class ParejasBehaviour : MonoBehaviour {
     [HideInInspector]
     public bool m_StartTimer;
 
+	private GameObject m_EverLoopController;
+
     // Use this for initialization
     void Start () {
         // create the state machine and start it
@@ -26,6 +28,10 @@ public class ParejasBehaviour : MonoBehaviour {
 		m_Time = 0;
         m_StartTimer = false;
         m_TimerText.text = "00:00";
+
+		m_EverLoopController = GameObject.Find ("EverloopController");
+		m_EverLoopController.GetComponent<EverloopController> ().StopAll ();
+		m_EverLoopController.GetComponent<EverloopController> ().FadeInLayer (m_EverLoopController.GetComponents<AudioSource> () [0], 0);
     }
 	
 	// Update is called once per frame
