@@ -50,7 +50,7 @@ public class LogicMenu : MonoBehaviour {
         if (PlayerPrefs.GetInt("bestScore1", 0) != 0)
         {
             score1.gameObject.SetActive(true);
-            score1.text = "1- " + PlayerPrefs.GetInt("bestScore1", 0);
+            score1.text = "1- " + GetFormatTime(PlayerPrefs.GetInt("bestScore1", 0));
         }
         else
             score1.gameObject.SetActive(false);
@@ -58,7 +58,7 @@ public class LogicMenu : MonoBehaviour {
         if (PlayerPrefs.GetInt("bestScore2", 0) != 0)
         {
             score2.gameObject.SetActive(true);
-            score2.text = "2- " + PlayerPrefs.GetInt("bestScore2", 0);
+            score2.text = "2- " + GetFormatTime(PlayerPrefs.GetInt("bestScore2", 0));
         }
         else
             score2.gameObject.SetActive(false);
@@ -66,7 +66,7 @@ public class LogicMenu : MonoBehaviour {
         if (PlayerPrefs.GetInt("bestScore3", 0) != 0)
         {
             score3.gameObject.SetActive(true);
-            score3.text = "3- " + PlayerPrefs.GetInt("bestScore3", 0);
+            score3.text = "3- " + GetFormatTime(PlayerPrefs.GetInt("bestScore3", 0));
         }
         else
             score3.gameObject.SetActive(false);
@@ -74,7 +74,7 @@ public class LogicMenu : MonoBehaviour {
         if (PlayerPrefs.GetInt("bestScore4", 0) != 0)
         {
             score4.gameObject.SetActive(true);
-            score4.text = "4- " + PlayerPrefs.GetInt("bestScore4", 0);
+            score4.text = "4- " + GetFormatTime(PlayerPrefs.GetInt("bestScore4", 0));
         }
         else
             score4.gameObject.SetActive(false);
@@ -82,7 +82,7 @@ public class LogicMenu : MonoBehaviour {
         if (PlayerPrefs.GetInt("bestScore5", 0) != 0)
         {
             score5.gameObject.SetActive(true);
-            score5.text = "5- " + PlayerPrefs.GetInt("bestScore5", 0);
+            score5.text = "5- " + GetFormatTime(PlayerPrefs.GetInt("bestScore5", 0));
         }
         else
             score5.gameObject.SetActive(false);
@@ -112,5 +112,14 @@ public class LogicMenu : MonoBehaviour {
                 --j;
             }            
         }
+    }
+
+    string GetFormatTime(int time)
+    {
+        float minutes = Mathf.Floor(time / 60);
+        float seconds = Mathf.RoundToInt(time % 60);
+
+        return (minutes < 10.0f ? ("0" + minutes.ToString()) : minutes.ToString())
+            + ":" + (seconds < 10.0f ? ("0" + seconds.ToString()) : seconds.ToString());
     }
 }
