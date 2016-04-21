@@ -104,7 +104,7 @@ public class LogicMenu : MonoBehaviour {
         for (i = 1; i < scoreValues.Length; ++i)
         {
             j = i;
-            while (j > 0 && scoreValues[j - 1] < scoreValues[j])
+            while (j > 0 && scoreValues[j - 1] > scoreValues[j])
             {
                 tmp = scoreValues[j];
                 scoreValues[j] = scoreValues[j - 1];
