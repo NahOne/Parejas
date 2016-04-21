@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ParejasBehaviour : MonoBehaviour {
     private ParejasBehaviourStateMachine m_ParejasSM = null;
@@ -17,6 +18,13 @@ public class ParejasBehaviour : MonoBehaviour {
 	public float m_Time;
     [HideInInspector]
     public bool m_StartTimer;
+
+	public AudioClip m_Finish;
+	public AudioClip m_Correct;
+	public AudioClip m_Fail;
+	public AudioClip m_TokenSelected;
+
+	public AudioClip m_FlipAll;
 
 	private GameObject m_EverLoopController;
 
@@ -59,4 +67,12 @@ public class ParejasBehaviour : MonoBehaviour {
             m_ParejasSM.PrintActiveStateTree();
         }
     }
+
+	public void InvokeGoToMainMenu(float time = 1.0f){
+		Invoke ("GoToMainMenu", time);
+	}
+
+	public void GoToMainMenu(){
+		SceneManager.LoadScene (0);
+	}
 }

@@ -13,7 +13,7 @@ public class State_WaitToken1 : BaseFSMState {
 	
 	public override void Exit ()
 	{
-		
+		SM.m_EverLoopController.GetComponent<AudioSource> ().PlayOneShot(SM.m_ssb.m_TokenSelected);
 	}
 	
 	public override void Update ()

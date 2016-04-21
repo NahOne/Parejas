@@ -15,6 +15,7 @@ public class State_CorrectTokens : BaseFSMState {
 		SM.m_Pieza2.SetActive (false);
 		SM.m_ssb.m_Correctas++;
 		SM.m_ssb.m_CorrectasText.text = SM.m_ssb.m_Correctas + " / 12";
+		SM.m_EverLoopController.GetComponent<AudioSource> ().PlayOneShot(SM.m_ssb.m_Correct);
 		if (SM.m_ssb.m_Correctas < 12)
 		{
 			SM.m_EverLoopController.GetComponent<EverloopController> ().FadeInLayer (SM.m_EverLoopController.GetComponents<AudioSource> () [SM.m_ssb.m_Correctas],3.0f);

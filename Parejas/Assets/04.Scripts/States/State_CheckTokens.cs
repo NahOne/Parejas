@@ -10,7 +10,7 @@ public class State_CheckTokens : BaseFSMState {
 	{
 		SM = (ParejasBehaviourStateMachine)GetStateMachine();
 		SM.m_ssb.texto.text = "Revisando";
-		m_Timer = 0;	
+		m_Timer = 0;
 	}
 
 	public override void Exit ()

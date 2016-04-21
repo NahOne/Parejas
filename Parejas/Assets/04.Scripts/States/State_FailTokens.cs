@@ -12,6 +12,7 @@ public class State_FailTokens : BaseFSMState {
 		SM.m_Pieza1.GetComponentInParent<Animator>().SetInteger("girar", -1);
 		SM.m_Pieza2.GetComponentInParent<Animator>().SetInteger("girar", -1);
 		m_Timer = 0;
+		SM.m_EverLoopController.GetComponent<AudioSource> ().PlayOneShot(SM.m_ssb.m_Fail);
 	}
 	
 	public override void Exit ()

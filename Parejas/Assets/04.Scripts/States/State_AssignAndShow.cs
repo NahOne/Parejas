@@ -27,6 +27,7 @@ public class State_AssignAndShow : BaseFSMState {
 			materialIndex.RemoveAt(indexMaterial);
 			sizeList--;
 		}
+		SM.m_EverLoopController.GetComponent<AudioSource> ().PlayOneShot(SM.m_ssb.m_FlipAll);
 		for (int j = 0; j<SM.m_ssb.piezas.Length; ++j)
 		{
 			SM.m_ssb.piezas[j].GetComponent<Animator>().SetInteger("girar", 1);
@@ -35,6 +36,7 @@ public class State_AssignAndShow : BaseFSMState {
 	
 	public override void Exit ()
 	{
+		SM.m_EverLoopController.GetComponent<AudioSource> ().PlayOneShot(SM.m_ssb.m_FlipAll);
 		for (int k = 0; k<SM.m_ssb.piezas.Length; ++k)
 		{
 			SM.m_ssb.piezas[k].GetComponent<Animator>().SetInteger("girar", -1);
